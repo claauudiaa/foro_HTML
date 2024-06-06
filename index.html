@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foro</title>
+    <link rel="stylesheet" href="assets/estilos/estilos.css">
+    <link rel="stylesheet" href="assets/estilos/modal.css">
+    <link rel="stylesheet" href="assets/fontawesome-free-5.15.4-web/css/all.css">
+    <script src="assets/fontawesome-free-5.15.4-web/js/all.js"></script>
+    <script src="assets/scripts/scripts.js"></script>
+</head>
+<body onload="fInicio()">
+    <div id="div_modal">
+        <!-- Este div permite hacer login -->
+        <div id="div_login">
+            <h3 class="div_titulo">Iniciar Sesión</h3>
+            <label for="login_nombre">Nombre</label>
+            <input type="text" id="login_nombre" placeholder="Ingrese su nombre">
+            <label for="login_password">Contraseña</label>
+            <input type="password" id="login_password" placeholder="Ingrese su contraseña">
+            <input type="button" value="Ingresar" onclick="fLogin()">
+            <div id="cambiar_registro">
+                <div>¿No tienes una cuenta? Regístrate&nbsp;</div>
+                <div id="cambiar" onclick="fAbrirRegistro()">aquí</div>
+            </div>
+            <div id="cambiar_invitado">
+                <div>Entrar como invitado&nbsp;</div>
+                <div id="invitar" onclick="fInvitado()">aquí</div>
+            </div>
+            <div id="div_error"></div>
+        </div>
+        <div id="div_registro">
+            <h3 class="div_titulo">Registrarse</h3>
+            <label for="registro_nombre">Nombre</label>
+            <input type="text" id="registro_nombre" placeholder="Ingrese su nombre">
+            <label for="registro_password">Contraseña</label>
+            <input type="password" id="registro_password" placeholder="Ingrese su contraseña">
+            <label for="registro_rpassword">Repita contraseña</label>
+            <input type="password" id="registro_rpassword" placeholder="Repita su contraseña">
+            <input type="button" value="Registrar" onclick="fRegistrar()">
+            <div id="cambiar_login">
+                <div>¿Tienes una cuenta? Inicia sesión&nbsp;</div>
+                <div id="loguear" onclick="fAbrirLogin()">aquí</div>
+            </div>
+            <div id="div_error_registro"></div>
+        </div>
+
+        <!-- Formulario temas -->
+        <div id="div_temas" class="form">
+            <input type="hidden" id="tem_id">
+
+            <label for="tem_nombre">Nombre del tema</label>
+            <input type="text" id="tem_nombre" autocomplete="off" placeholder="Ingrese el nombre del tema" class="input">
+        
+            <div class="botonera">
+                <div onclick="fOcultarForm()" class="boton_cancelar">Cancelar</div>
+                <div id="tem_A" onclick="fCRUDTemas('a')" class="botones">Añadir</div>
+                <div id="tem_M" onclick="fCRUDTemas('m')" class="botones">Modificar</div>
+                <div id="tem_B" onclick="fCRUDTemas('b')" class="botones">Borrar</div>
+            </div>
+        </div>
+
+        <!-- Formulario mensajes -->
+        <div id="div_mensajes" class="form">
+            <input type="hidden" id="men_id">
+
+            <label for="men_texto">Texto del mensaje</label>
+            <input type="text" id="men_texto" autocomplete="off" placeholder="Ingrese el texto del mensaje" class="input">
+
+            <input type="hidden" id="men_fecha">
+            <input type="hidden" id="men_usu_id">
+            <input type="hidden" id="men_tem_id">
+        
+            <div class="botonera">
+                <div onclick="fOcultarForm()" class="boton_cancelar">Cancelar</div>
+                <div id="men_A" onclick="fCRUDMensajes('a')" class="botones">Añadir</div>
+                <div id="men_M" onclick="fCRUDMensajes('m')" class="botones">Modificar</div>
+                <div id="men_B" onclick="fCRUDMensajes('b')" class="botones">Borrar</div>
+            </div>
+        </div>
+
+    </div>
+    <header><h1>FORO</h1></header>
+    <section>
+        <div id="section_grande">
+            <div id="section_titulo_tema"></div>
+            <div id="section_temas"></div>   
+        </div>
+        <div id="section_pequeno">
+            <div id="section_titulo_mensaje"></div>
+            <div id="section_mensajes"></div>   
+        </div>
+    </section>
+    <footer>
+        <div>&copy;Claudia Candelas</div>
+        <div onclick="fCerrarSesion()" id="div_cerrar">Cerrar Sesión</div>
+    </footer>
+</body>
+</html>

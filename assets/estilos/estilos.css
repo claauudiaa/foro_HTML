@@ -1,0 +1,201 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 1fr 40px;
+    grid-template-areas: 
+    "zh"
+    "zs"
+    "zf";
+}
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    grid-area: zh;
+    font-family: 'Poppins',sans-serif;
+    background: linear-gradient(to bottom right, #3bb2f6, #305dd7);
+    color: white;
+    line-height: 60px;
+    text-align: center;
+}
+
+
+#div_modal {
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+section {
+    grid-area: zs;
+    background-color: #000;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+#section_grande {
+    width: 20%;
+    height: 100%;
+    overflow-y: auto;
+}
+#section_pequeno {
+    width: 80%;
+    height: 100%;
+    overflow-y: auto;
+}
+#section_titulo_tema {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins',sans-serif;
+    color: white;
+}
+#section_temas {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.div_contenedor_tema {
+    width: 95%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Poppins',sans-serif;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 10px 0px;
+}
+.div_tema {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#section_titulo_mensaje {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Poppins',sans-serif;
+    color: white;
+}
+#section_mensajes {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+}
+.div_contenedor_mensaje {
+    width: 95%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a;
+    color: white;
+    border-radius: 10px;
+    font-family: 'Poppins',sans-serif;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    margin: 10px 0px;
+}
+.div_persona {
+    width: 20%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.div_foto {
+    width: 90%;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 0px;
+}
+.div_foto > img {
+    height: 90%;
+}
+.div_user {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.div_mensaje {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.div_acciones {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 20px;
+}
+.acciones {
+    color: white;
+    padding: 0px 10px;
+}
+.acciones:hover {
+    cursor: pointer;
+}
+footer {
+    grid-area: zf;
+    background: linear-gradient(to bottom right, #f59e0b, #d97706);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 10px;
+    align-items: center;
+}
+@media screen and (min-width:1200px) {
+    #section_grande {
+        width: 25%;
+        height: 100%;
+    }
+    #section_pequeno {
+        width: 75%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
